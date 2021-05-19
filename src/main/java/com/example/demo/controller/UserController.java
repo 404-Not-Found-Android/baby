@@ -6,8 +6,6 @@ import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
@@ -18,8 +16,7 @@ public class UserController {
     public SpringBootJSONResult registerUser(@RequestBody User user) {
         SpringBootJSONResult springBootJSONResult = new SpringBootJSONResult();
         try {
-            user.setCreateTime(new Date());
-            user.setUpdateTime(new Date());
+            user.setCreateTime(System.currentTimeMillis());
             int result = userService.addUser(user);
             if (result == -1) {
                 springBootJSONResult.setStatus(500);
