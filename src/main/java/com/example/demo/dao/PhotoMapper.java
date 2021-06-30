@@ -2,18 +2,20 @@ package com.example.demo.dao;
 
 import com.example.demo.pojo.Photo;
 
+import java.util.List;
+
 public interface PhotoMapper {
     int deleteByPrimaryKey(Long id);
 
-    int insert(Photo photo);
+    int insert(Photo record);
 
-    int insertSelective(Photo photo);
+    int insertSelective(Photo record);
 
     Photo selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(Photo photo);
+    int updateByPrimaryKeySelective(Photo record);
 
-    int updateByPrimaryKeyWithBLOBs(Photo photo);
+    int updateByPrimaryKey(Photo record);
 
-    int updateByPrimaryKey(Photo photo);
+    List<Photo> selectAll();
 }

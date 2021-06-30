@@ -7,6 +7,8 @@ public class Photo {
 
     private Long updateTime;
 
+    private String description;
+
     private String url;
 
     private String uploadAuthor;
@@ -15,7 +17,7 @@ public class Photo {
 
     private String fileName;
 
-    private String describe;
+    private String fileUuid;
 
     public Long getId() {
         return id;
@@ -39,6 +41,14 @@ public class Photo {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     public String getUrl() {
@@ -73,11 +83,11 @@ public class Photo {
         this.fileName = fileName == null ? null : fileName.trim();
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getFileUuid() {
+        return fileUuid;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe == null ? null : describe.trim();
+    public void setFileUuid(String fileUuid) {
+        this.fileUuid = fileUuid == null ? null : fileUuid.trim();
     }
 }
